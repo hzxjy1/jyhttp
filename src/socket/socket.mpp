@@ -1,0 +1,48 @@
+module;
+// #include <memory>
+#include <optional>
+#include <string>
+#define SOCKET_FD int
+#define RESULT bool
+
+export module Socket;
+
+class Socket;
+class POSIXSocket;
+
+// std::optional<std::unique_ptr<Socket>> GetSocket() {
+// #if defined(__linux__)
+//   return std::make_unique<POSIXSocket>();
+// #elif defined(__APPLE__) && defined(__MACH__)
+//   return std::make_unique<POSIXSocket>();
+// #elif defined(_WIN32) || defined(_WIN64)
+//   return std::nullopt;
+// #else
+//   return std::nullopt;
+// #endif
+// }
+
+class Socket {
+ public:
+    virtual std::optional<SOCKET_FD> CreateSocket() = 0;
+    virtual std::optional<std::string> GetRawText() = 0;
+    virtual std::optional<RESULT> WriteOut() = 0;
+};
+
+class POSIXSocket : public Socket {
+  std::optional<SOCKET_FD> CreateSocket() override;
+  std::optional<std::string> GetRawText() override;
+  std::optional<RESULT> WriteOut() override;
+};
+
+std::optional<SOCKET_FD> POSIXSocket::CreateSocket() {
+  return std::optional<SOCKET_FD>();
+}
+
+std::optional<std::string> POSIXSocket::GetRawText() {
+  return std::optional<std::string>();
+}
+
+std::optional<RESULT> POSIXSocket::WriteOut() {
+  return std::optional<RESULT>();
+}

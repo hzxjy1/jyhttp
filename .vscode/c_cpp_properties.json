@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "compilerPath": "/usr/lib/ccache/bin/g++",
+      "cppStandard": "c++20",
+      "includePath": [
+        "${{workspaceFolder}}/**",
+        "src/include/**"
+      ],
+      "intelliSenseMode": "linux-gcc-x64",
+      "name": "Linux"
+    }
+  ],
+  "version": 4
+}

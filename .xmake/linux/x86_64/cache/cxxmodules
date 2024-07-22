@@ -1,0 +1,31 @@
+{
+    modules = {
+        ["example/c++.build.modules.builder"] = ref("example", "c++.modules")
+    },
+    example = {
+        ["c++.modules"] = {
+            ["build/.objs/example/linux/x86_64/release/src/socket/socket.mpp.o"] = {
+                provides = {
+                    Socket = {
+                        sourcefile = "src/socket/socket.mpp",
+                        bmi = "build/.gens/example/linux/x86_64/release/rules/bmi/cache/modules/62a17eae/Socket.gcm",
+                        interface = true
+                    }
+                }
+            },
+            ["build/.objs/example/linux/x86_64/release/src/core/jyhttp.cpp.o"] = {
+                cppfile = "src/core/jyhttp.cpp",
+                requires = {
+                    Socket = {
+                        unique = false,
+                        path = "build/.gens/example/linux/x86_64/release/rules/bmi/cache/modules/62a17eae/Socket.gcm",
+                        method = "by-name"
+                    }
+                }
+            },
+            ["build/.objs/example/linux/x86_64/release/example.cpp.o"] = {
+                cppfile = "example.cpp"
+            }
+        }
+    }
+}

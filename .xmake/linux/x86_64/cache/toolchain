@@ -1,0 +1,62 @@
+{
+    tool_target_example_linux_x86_64_cxx = {
+        toolname = "gcc",
+        toolchain_info = {
+            plat = "linux",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            name = "gcc",
+            arch = "x86_64"
+        },
+        program = "/usr/lib/ccache/bin/gcc"
+    },
+    tool_target_jyhttp_linux_x86_64_cxx = {
+        toolname = "gcc",
+        toolchain_info = {
+            plat = "linux",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            name = "gcc",
+            arch = "x86_64"
+        },
+        program = "/usr/lib/ccache/bin/gcc"
+    },
+    tool_target_example_with_lib_linux_x86_64_cxx = {
+        toolname = "gcc",
+        toolchain_info = {
+            plat = "linux",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            name = "gcc",
+            arch = "x86_64"
+        },
+        program = "/usr/lib/ccache/bin/gcc"
+    },
+    tool_target_example_linux_x86_64_ld = {
+        toolname = "gxx",
+        toolchain_info = {
+            plat = "linux",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            name = "gcc",
+            arch = "x86_64"
+        },
+        program = "/usr/lib/ccache/bin/g++"
+    },
+    tool_target_example_linux_x86_64_objcopy = {
+        toolname = "objcopy",
+        toolchain_info = {
+            plat = "linux",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            name = "gcc",
+            arch = "x86_64"
+        },
+        program = "/usr/bin/objcopy"
+    },
+    tool_target_example_linux_x86_64_strip = {
+        toolname = "strip",
+        toolchain_info = {
+            plat = "linux",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            name = "gcc",
+            arch = "x86_64"
+        },
+        program = "/usr/bin/strip"
+    }
+}
