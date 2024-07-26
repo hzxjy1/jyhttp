@@ -23,10 +23,10 @@ class POSIXSocket;
 // }
 
 class Socket {
- public:
-    virtual std::optional<SOCKET_FD> CreateSocket() = 0;
-    virtual std::optional<std::string> GetRawText() = 0;
-    virtual std::optional<RESULT> WriteOut() = 0;
+public:
+  virtual std::optional<SOCKET_FD> CreateSocket() = 0;
+  virtual std::optional<std::string> GetRawText() = 0;
+  virtual std::optional<RESULT> WriteOut() = 0;
 };
 
 class POSIXSocket : public Socket {
