@@ -1,0 +1,4 @@
+CompileFlags:
+  Remove: [-fmodules-ts,-fmodule-mapper=/tmp/.xmake1000/240724/jyhttp/src/core/jyhttp.cpp]
+Diagnostics:
+  Suppress: module_not_found
