@@ -26,12 +26,4 @@ struct response {
   // todo
 };
 
-extern "C" {
-void *Jyhttp_Create();
-void Jyhttp_Destroy(void *obj);
-void Jyhttp_Get(void *obj, const char *path,
-                response (*handler)(const request *));
-void Jyhttp_Listen(void *obj, const int *port);
-}
-
 #endif // JYHTTP_HPP
