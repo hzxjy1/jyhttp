@@ -1,10 +1,8 @@
-#include <jyhttp.hpp>
 #include <iostream>
+#include <jyhttp.hpp>
 
-response foo(const request &req) {
+void foo(const request &req, response &res) {
   std::cout << req.id << std::endl;
-  response res = response();
-  return res;
 }
 
 int main() {

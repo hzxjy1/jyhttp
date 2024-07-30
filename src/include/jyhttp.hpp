@@ -1,29 +1,43 @@
 #ifndef JYHTTP_HPP
 #define JYHTTP_HPP
+#define SOCKET_FD int
 
-#include <functional>
 #include <string>
 
 struct request;
 struct response;
+namespace JySockets {
+    class Socket;
+}
 
 class Jyhttp {
 public:
   Jyhttp();
+  Jyhttp(const Jyhttp &obj);
   ~Jyhttp();
-  Jyhttp &Get(const std::string &path,
-              std::function<response(const request &)> handler);
+  Jyhttp &Get(const std::string &path, void (*)(const request &, response &));
   void Listen(const int &port);
+
+private:
+  JySockets::Socket *socket_ptr; // Type: JySockets::Socket
 };
 
 struct request {
   std::string id;
-  // todo
+  // TODO
 };
 
 struct response {
   std::string id;
-  // todo
+  // TODO
 };
 
+namespace JySockets {
+class Socket {
+public:
+  virtual SOCKET_FD CreateSocket() = 0;
+  virtual std::string GetRawText() = 0;
+  virtual bool WriteOut() = 0;
+};
+}
 #endif // JYHTTP_HPP
