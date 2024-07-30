@@ -1,15 +1,16 @@
 module;
 #include <iostream>
-#include <ostream>
 #include <optional>
+#include <ostream>
 #include <string>
 #include "jyhttp.hpp"
+
 
 export module JySockets;
 
 export namespace JySockets {
 class POSIXSocket : public Socket {
-public:
+ public:
   POSIXSocket();
   SOCKET_FD CreateSocket() override;
   std::string GetRawText() override;
@@ -19,7 +20,7 @@ public:
 POSIXSocket::POSIXSocket() {}
 
 SOCKET_FD POSIXSocket::CreateSocket() {
-  std::cout<<"Create socket"<<std::endl;
+  std::cout << "Create socket" << std::endl;
   return 1;
 }
 
@@ -31,7 +32,7 @@ bool POSIXSocket::WriteOut() {
   return false;
 }
 
-std::optional<Socket *> GetSocket() {
+std::optional<Socket*> GetSocket() {
 #if defined(__linux__)
   return new POSIXSocket();
 #elif defined(__APPLE__) && defined(__MACH__)
@@ -42,4 +43,4 @@ std::optional<Socket *> GetSocket() {
   return std::nullopt;
 #endif
 }
-} // namespace JySockets
+}  // namespace JySockets

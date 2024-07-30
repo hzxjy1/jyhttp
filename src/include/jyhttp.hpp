@@ -7,19 +7,19 @@
 struct request;
 struct response;
 namespace JySockets {
-    class Socket;
+class Socket;
 }
 
 class Jyhttp {
-public:
+ public:
   Jyhttp();
-  Jyhttp(const Jyhttp &obj);
+  Jyhttp(const Jyhttp& obj);
   ~Jyhttp();
-  Jyhttp &Get(const std::string &path, void (*)(const request &, response &));
-  void Listen(const int &port);
+  Jyhttp& Get(const std::string& path, void (*)(const request&, response&));
+  void Listen(const int& port);
 
-private:
-  JySockets::Socket *socket_ptr; // Type: JySockets::Socket
+ private:
+  JySockets::Socket* socket_ptr;  // Type: JySockets::Socket
 };
 
 struct request {
@@ -34,10 +34,10 @@ struct response {
 
 namespace JySockets {
 class Socket {
-public:
+ public:
   virtual SOCKET_FD CreateSocket() = 0;
   virtual std::string GetRawText() = 0;
   virtual bool WriteOut() = 0;
 };
-}
-#endif // JYHTTP_HPP
+}  // namespace JySockets
+#endif  // JYHTTP_HPP

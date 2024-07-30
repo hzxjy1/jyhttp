@@ -1,7 +1,7 @@
 #include <iostream>
 #include <jyhttp.hpp>
 
-void foo(const request &req, response &res) {
+void foo(const request& req, response& res) {
   std::cout << req.id << std::endl;
 }
 
