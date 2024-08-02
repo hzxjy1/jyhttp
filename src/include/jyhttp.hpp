@@ -35,7 +35,7 @@ struct response {
 namespace JySockets {
 class Socket {
  public:
-  virtual SOCKET_FD CreateSocket() = 0;
+  virtual const SOCKET_FD CreateSocket() = 0;
   virtual std::string GetRawText() = 0;
   virtual bool WriteOut() = 0;
 };
